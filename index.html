@@ -1,23 +1,9 @@
-<?php
-// --- НАСТРОЙКИ САЙТА ---
-// Вы можете легко изменить эти данные в будущем
-
-$productName = "Kaspersky Purrfect Security";
-$version = "2025.1.0 Final";
-$fileSize = "211 KB"; // Примерный размер вашего .exe установщика
-
-// !!! ВАЖНО !!!
-// Когда у вас будет готова ссылка на скачивание (например, с Google Drive или Dropbox),
-// просто замените этот плейсхолдер на вашу ссылку.
-$downloadLink = "#ЗАМЕНИТЕ_ЭТУ_СТРОКУ_ВАШЕЙ_ССЫЛКОЙ#";
-
-?>
 <!DOCTYPE html>
 <html lang="ru">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title><?php echo $productName; ?> - Непревзойденная защита</title>
+    <title>Kaspersky Purrfect Security - Непревзойденная защита</title>
     
     <!-- Подключаем шрифты с Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -32,7 +18,6 @@ $downloadLink = "#ЗАМЕНИТЕ_ЭТУ_СТРОКУ_ВАШЕЙ_ССЫЛКОЙ
             --accent-green: #01F5A0;
             --text-white: #FFFFFF;
             --text-gray: #A0A0B0;
-            --card-blue: #2A2A5E;
         }
 
         * {
@@ -176,13 +161,13 @@ $downloadLink = "#ЗАМЕНИТЕ_ЭТУ_СТРОКУ_ВАШЕЙ_ССЫЛКОЙ
         <section class="hero">
             <h1>Нейросетевая защита.<br>Кошачья грация.</h1>
             <p>
-                Представляем <?php echo $productName; ?> — первый в мире антивирус,
+                Представляем <span class="product-name"></span> — первый в мире антивирус,
                 использующий непредсказуемость кошачьего интеллекта для обнаружения
                 даже самых скрытых угроз.
             </p>
-            <a href="<?php echo $downloadLink; ?>" class="btn-download">Скачать бесплатно</a>
+            <a href="#" class="btn-download download-link">Скачать бесплатно</a>
             <div class="file-info">
-                Версия: <?php echo $version; ?> | Размер: <?php echo $fileSize; ?> | Совместимость: Windows 10/11
+                Версия: <span class="version"></span> | Размер: <span class="file-size"></span> | Совместимость: Windows 10/11
             </div>
         </section>
 
@@ -212,6 +197,43 @@ $downloadLink = "#ЗАМЕНИТЕ_ЭТУ_СТРОКУ_ВАШЕЙ_ССЫЛКОЙ
             <p>© 2025 Purrfect Labs. Все права защищены (наверное).</p>
         </div>
     </footer>
+
+    <!-- СКРИПТ ДЛЯ НАСТРОЙКИ САЙТА -->
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            
+            // --- НАСТРОЙКИ САЙТА ---
+            // Вы можете легко изменить эти данные в будущем
+            const config = {
+                productName: "Kaspersky Purrfect Security",
+                version: "2025.1.0 Final",
+                fileSize: "211 KB", // Примерный размер вашего .exe установщика
+
+                // !!! ВАЖНО !!!
+                // Когда у вас будет готова ссылка на скачивание,
+                // просто замените этот плейсхолдер на вашу ссылку.
+                downloadLink: "#ЗАМЕНИТЕ_ЭТУ_СТРОКУ_ВАШЕЙ_ССЫЛКОЙ#"
+            };
+
+            // --- Динамическая подстановка данных на страницу ---
+            
+            // Устанавливаем название продукта
+            const productNameElements = document.querySelectorAll(".product-name");
+            productNameElements.forEach(el => el.textContent = config.productName);
+
+            // Устанавливаем ссылку для скачивания
+            const downloadLinkElements = document.querySelectorAll(".download-link");
+            downloadLinkElements.forEach(el => el.href = config.downloadLink);
+
+            // Устанавливаем информацию о файле
+            const versionElement = document.querySelector(".version");
+            if (versionElement) versionElement.textContent = config.version;
+
+            const fileSizeElement = document.querySelector(".file-size");
+            if (fileSizeElement) fileSizeElement.textContent = config.fileSize;
+
+        });
+    </script>
 
 </body>
 </html>
