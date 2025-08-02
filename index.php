@@ -1,1 +1,217 @@
+<?php
+// --- НАСТРОЙКИ САЙТА ---
+// Вы можете легко изменить эти данные в будущем
 
+$productName = "Kaspersky Purrfect Security";
+$version = "2025.1.0 Final";
+$fileSize = "211 KB"; // Примерный размер вашего .exe установщика
+
+// !!! ВАЖНО !!!
+// Когда у вас будет готова ссылка на скачивание (например, с Google Drive или Dropbox),
+// просто замените этот плейсхолдер на вашу ссылку.
+$downloadLink = "#ЗАМЕНИТЕ_ЭТУ_СТРОКУ_ВАШЕЙ_ССЫЛКОЙ#";
+
+?>
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title><?php echo $productName; ?> - Непревзойденная защита</title>
+    
+    <!-- Подключаем шрифты с Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+
+    <style>
+        /* --- СТИЛИ САЙТА --- */
+        :root {
+            --bg-dark: #14141F;
+            --bg-panel: #1E1E2D;
+            --accent-green: #01F5A0;
+            --text-white: #FFFFFF;
+            --text-gray: #A0A0B0;
+            --card-blue: #2A2A5E;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: var(--bg-dark);
+            color: var(--text-white);
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 1100px;
+            margin: auto;
+            padding: 0 20px;
+        }
+
+        header {
+            padding: 20px 0;
+            border-bottom: 1px solid var(--bg-panel);
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: 700;
+        }
+
+        .logo span {
+            color: var(--accent-green);
+        }
+
+        .hero {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            min-height: 70vh;
+            padding: 40px 0;
+        }
+
+        .hero h1 {
+            font-size: 4rem;
+            font-weight: 700;
+            line-height: 1.2;
+            margin-bottom: 20px;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            color: var(--text-gray);
+            max-width: 600px;
+            margin-bottom: 30px;
+        }
+
+        .btn-download {
+            display: inline-block;
+            background-color: var(--accent-green);
+            color: var(--bg-dark);
+            padding: 15px 40px;
+            font-size: 18px;
+            font-weight: 600;
+            text-decoration: none;
+            border-radius: 8px;
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+            box-shadow: 0 4px 20px rgba(1, 245, 160, 0.3);
+        }
+
+        .btn-download:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 7px 25px rgba(1, 245, 160, 0.4);
+        }
+
+        .file-info {
+            margin-top: 15px;
+            font-size: 14px;
+            color: var(--text-gray);
+        }
+
+        .features {
+            padding: 80px 0;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 50px;
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .feature-card {
+            background-color: var(--bg-panel);
+            padding: 30px;
+            border-radius: 8px;
+            border-left: 3px solid var(--accent-green);
+        }
+
+        .feature-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+        }
+
+        .feature-card p {
+            color: var(--text-gray);
+        }
+        
+        footer {
+            text-align: center;
+            padding: 40px 0;
+            margin-top: 50px;
+            border-top: 1px solid var(--bg-panel);
+            color: var(--text-gray);
+        }
+
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+        }
+
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="container">
+            <div class="logo">Purrfect<span>Security</span></div>
+        </div>
+    </header>
+
+    <main>
+        <section class="hero">
+            <h1>Нейросетевая защита.<br>Кошачья грация.</h1>
+            <p>
+                Представляем <?php echo $productName; ?> — первый в мире антивирус,
+                использующий непредсказуемость кошачьего интеллекта для обнаружения
+                даже самых скрытых угроз.
+            </p>
+            <a href="<?php echo $downloadLink; ?>" class="btn-download">Скачать бесплатно</a>
+            <div class="file-info">
+                Версия: <?php echo $version; ?> | Размер: <?php echo $fileSize; ?> | Совместимость: Windows 10/11
+            </div>
+        </section>
+
+        <section class="features">
+            <div class="container">
+                <h2 class="section-title">Ключевые технологии</h2>
+                <div class="features-grid">
+                    <div class="feature-card">
+                        <h3>Квантовая Эвристика</h3>
+                        <p>Наш движок анализирует угрозы в состоянии суперпозиции, находя уязвимости еще до их появления.</p>
+                    </div>
+                    <div class="feature-card">
+                        <h3>Поведенческий анализ "Девять жизней"</h3>
+                        <p>Система позволяет вредоносным файлам "подумать", что они в безопасности, а затем изолирует их в самый неожиданный момент.</p>
+                    </div>
+                    <div class="feature-card">
+                        <h3>Децентрализованная база угроз "Кошачья мята"</h3>
+                        <p>Каждый пользователь анонимно делится информацией о подозрительных файлах, создавая неуязвимую сеть.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>© 2025 Purrfect Labs. Все права защищены (наверное).</p>
+        </div>
+    </footer>
+
+</body>
+</html>
